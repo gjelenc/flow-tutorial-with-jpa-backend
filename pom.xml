@@ -33,7 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>javax</groupId> 
-            <artifactId>javaee-web-api</artifactId>
+            <artifactId>javaee-api</artifactId>
             <version>8.0</version>
             <scope>provided</scope>
         </dependency>
@@ -47,16 +47,16 @@
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-cdi</artifactId>
         </dependency>
-        
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.wildfly.plugins</groupId>
-                <artifactId>wildfly-maven-plugin</artifactId>
-                <version>1.2.2.Final</version>
-            </plugin>
+<!--            Not needed when using payara full-->
+            <!--            <plugin>-->
+<!--                <groupId>org.wildfly.plugins</groupId>-->
+<!--                <artifactId>wildfly-maven-plugin</artifactId>-->
+<!--                <version>1.2.2.Final</version>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
@@ -82,6 +82,7 @@
             </dependencies>
 
             <build>
+                <finalName>${project.artifactId}</finalName>
                 <plugins>
                     <plugin>
                         <groupId>com.vaadin</groupId>

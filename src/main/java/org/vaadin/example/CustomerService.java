@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -76,7 +75,7 @@ public class CustomerService {
     /**
      * Sample data generation
      */
-    @PostConstruct
+    //@PostConstruct - not working with Payara 5.192.0 - created TestSingleton class which is calling this method
     public void ensureTestData() {
         if (findAll().isEmpty()) {
             final String[] names = new String[]{"Gabrielle Patel", "Brian Robinson", "Eduardo Haugen",
